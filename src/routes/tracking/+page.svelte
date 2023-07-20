@@ -82,6 +82,7 @@
               <tr>
                 <th>Fecha</th>
                 <th>Casillero</th>
+                <th>Cliente</th>
                 <th>Numero de Tracking</th>
                 <th class="text-right">Peso (lbs)</th>
                 <th class="text-right">Precio Total</th>
@@ -93,6 +94,10 @@
               <tr>
                 <td>{tracking.factura.fecha}</td>
                 <th>{tracking.factura.casillero}</th>
+                <td
+                  >{tracking.factura.cliente.nombre}
+                  {tracking.factura.cliente.nombre}</td
+                >
                 <td>{tracking.numero_tracking}</td>
                 <td class="text-right">{tracking.peso}</td>
                 <td class="text-right">${tracking.precio}</td>
