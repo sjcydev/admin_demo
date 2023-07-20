@@ -96,7 +96,7 @@
                 <th>{tracking.factura.casillero}</th>
                 <td
                   >{tracking.factura.cliente.nombre}
-                  {tracking.factura.cliente.nombre}</td
+                  {tracking.factura.cliente.apellido}</td
                 >
                 <td>{tracking.numero_tracking}</td>
                 <td class="text-right">{tracking.peso}</td>
