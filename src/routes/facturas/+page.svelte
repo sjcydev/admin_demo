@@ -1,7 +1,6 @@
 <script lang="ts">
   import { createSearchStore, searchHandler } from "$lib/stores/search";
   import { onDestroy } from "svelte";
-  import { goto } from "$app/navigation";
   import Fa from "svelte-fa";
   import {
     faCircleXmark,
@@ -19,7 +18,7 @@
 
   const searchUsuarios = data.facturas.map((factura: VerFacturas) => ({
     ...factura,
-    searchTerm: `${factura.cliente.casillero}`,
+    searchTerm: `${factura.cliente.casillero} ${factura.cliente.nombre} ${factura.cliente.apellido}`,
   }));
 
   const searchStore = createSearchStore(searchUsuarios);
