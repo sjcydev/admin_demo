@@ -18,7 +18,6 @@ export async function createInvoice(
   cliente: Cliente,
   descargar = false
 ) {
-  console.log(info);
   let trackings = info.trackings.map(
     ({ numero_tracking, peso, base, precio }) => [
       numero_tracking,
@@ -38,7 +37,7 @@ export async function createInvoice(
 
   const doc = new jsPDF("p", "pt", "a4", true);
 
-  doc.addImage(Logo, "PNG", 40, 40, 176, 43, "", "FAST");
+  // doc.addImage(Logo, "PNG", 40, 40, 176, 43, "", "FAST");
   autoTable(doc, {
     body: [
       [
@@ -183,16 +182,16 @@ export async function createInvoice(
     head: [["Terminos y Condiciones"]],
     body: [
       [
-        "\u2022 507BuyServices aplica cargos por peso o volumen para cargas extra dimensionada.",
+        "\u2022 Compañia aplica cargos por peso o volumen para cargas extra dimensionada.",
       ],
       [
-        "\u2022 507BuyServices no se hará responsable por daño en mercancia mal empacada por exportación.",
+        "\u2022 Compañia no se hará responsable por daño en mercancia mal empacada por exportación.",
       ],
       [
-        "\u2022 507BuyServices no se hace responsable por mercancia extraviada entregada por USPS.",
+        "\u2022 Compañia no se hace responsable por mercancia extraviada entregada por USPS.",
       ],
       [
-        "\u2022 507BuyServices no se hace responsable por paquetes, despues de 1 mes de no ser retirado en la oficina.",
+        "\u2022 Compañia no se hace responsable por paquetes, despues de 1 mes de no ser retirado en la oficina.",
       ],
     ],
     headStyles: {
@@ -215,9 +214,9 @@ export async function createInvoice(
     head: [["Datos Bancarios para Transferencia"]],
     body: [
       ["Banco General"],
-      ["Nombre: 507BuyServices"],
-      ["Tipo de Cuenta: Ahorros"],
-      ["Cuenta: 04-95-98-323727-8"],
+      ["Nombre: Compañia"],
+      ["Tipo de Cuenta: "],
+      ["Cuenta: "],
     ],
     styles: { halign: "center" },
     pageBreak: "avoid",
@@ -226,14 +225,13 @@ export async function createInvoice(
 
   autoTable(doc, {
     didDrawPage: function (data) {
-      let ubicacion =
-        "Dos Mares Calle Circunvalación, PH Elite 500 local 2, dentro de 'Baixing Market'";
+      let ubicacion = "Ubicacion 1, El Dorado";
 
       if (cliente.sucursal === "bethania") {
-        ubicacion = "Camino Real de Bethania, Casa 604";
+        ubicacion = "Ubicacion 2, Bethania";
       }
 
-      let str = `507BuyServices | Teléfono +507 6858-1291\n${ubicacion}`;
+      let str = `Compañia | Teléfono +507 6666-6666\n${ubicacion}`;
       doc.setFontSize(11);
 
       var pageSize = doc.internal.pageSize;

@@ -12,8 +12,8 @@
     styleToString,
   } from "svelte-email";
 
-  let logo =
-    "https://res.cloudinary.com/dx312n0ce/image/upload/f_auto,q_auto/fhfs05qmzfcfqsmjbrvc";
+  // let logo =
+  //   "https://res.cloudinary.com/dx312n0ce/image/upload/f_auto,q_auto/fhfs05qmzfcfqsmjbrvc";
 
   const preview = "Tienes paquetes listo para retirar";
   export let nombre: String;
@@ -21,9 +21,8 @@
   export let trackings: Trackings[];
   export let sucursal: String;
 
-  let ubicacion =
-    "Dos Mares Calle Circunvalación, PH Elite 500 local 2, dentro de 'Baixing Market'";
-  let maps = "https://goo.gl/maps/bmxTDFpGHTRMLGCR9";
+  let ubicacion = "Ubicacion de la sucursal";
+  let maps = "https://maps.google.com";
 
   if (sucursal === "bethania") {
     ubicacion = "Camino Real de Bethania, Casa 604";
@@ -101,14 +100,15 @@
   <Container style={main}>
     <Container style={container}>
       <Container style={logoContainer}>
-        <Img
-          src={logo}
-          width="30"
-          height="30"
-          style={logoIcon}
-          alt="507BuyServices
-        Logo"
-        />
+        <!-- <Img -->
+        <!--   src={logo} -->
+        <!--   width="30" -->
+        <!--   height="30" -->
+        <!--   style={logoIcon} -->
+        <!--   alt="507BuyServices -->
+        <!-- Logo" -->
+        <!-- /> -->
+        <Heading style={logoIcon}>Logo</Heading>
       </Container>
       <Heading style={heading}>Ya puedes retirar tu orden!</Heading>
       <Text style={paragraph}>
